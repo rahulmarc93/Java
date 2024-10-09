@@ -11,6 +11,7 @@ public class Helloworld_$ {
 		float num5 = 50.23F;
 		double num6 = 60.86;
 		boolean torf = true;
+		String str = "Rahul";
 		
 		System.out.println(num1);
 		System.out.println(num2);
@@ -20,6 +21,7 @@ public class Helloworld_$ {
 		System.out.println(num5);
 		System.out.println(num6);
 		System.out.println(torf);
+		System.out.println(str);
 	}
 
 }
