@@ -3,74 +3,66 @@ package interviewCodes;
 import java.util.Scanner;
 
 public class Perimeter_Using_Menu_Driven_Switch_Case {
-	
-		    // Method to calculate the perimeter of a square
-		    public static double squarePerimeter(double side) {
+
+		 public static double perimeterSquare(double side) {
 		        return 4 * side;
 		    }
 
-		    // Method to calculate the perimeter of a rectangle
-		    public static double rectanglePerimeter(double length, double width) {
+		   
+		    public static double perimeterRectangle(double length, double width) {
 		        return 2 * (length + width);
 		    }
 
-		    // Method to calculate the perimeter of a circle
-		    public static double circlePerimeter(double radius) {
-		        return 2 * Math.PI* radius;
+		   
+		    public static double perimeterCircle(double radius) {
+		        return 2 * Math.PI * radius;
 		    }
 
 		    public static void main(String[] args) {
 		        Scanner scanner = new Scanner(System.in);
 		        int choice;
-		        boolean exit = false;
-
-		        while (!exit) {
-		            System.out.println("\nChoose an option to calculate the perimeter:");
-		            System.out.println("1. Square");
-		            System.out.println("2. Rectangle");
-		            System.out.println("3. Circle");
+		        
+		        do {
+		            System.out.println("\n--- Perimeter Calculator ---");
+		            System.out.println("1. Calculate perimeter of a square");
+		            System.out.println("2. Calculate perimeter of a rectangle");
+		            System.out.println("3. Calculate perimeter of a circle");
 		            System.out.println("4. Exit");
 		            System.out.print("Enter your choice: ");
 		            choice = scanner.nextInt();
-
+		            
 		            switch (choice) {
 		                case 1:
-		                    // Perimeter of a Square
-		                    System.out.print("Enter the side length of the square: ");
+		                    
+		                    System.out.print("Enter the side square: ");
 		                    double side = scanner.nextDouble();
-		                    double squarePerimeter = squarePerimeter(side);
-		                    System.out.println("Perimeter of the square: " + squarePerimeter);
+		                    System.out.println("Perimeter of the square: " + perimeterSquare(side));
 		                    break;
 
 		                case 2:
-		                    // Perimeter of a Rectangle
+		                  
 		                    System.out.print("Enter the length of the rectangle: ");
 		                    double length = scanner.nextDouble();
 		                    System.out.print("Enter the width of the rectangle: ");
 		                    double width = scanner.nextDouble();
-		                    double rectanglePerimeter = rectanglePerimeter(length, width);
-		                    System.out.println("Perimeter of the rectangle: " + rectanglePerimeter);
+		                    System.out.println("Perimeter of the rectangle: " + perimeterRectangle(length, width));
 		                    break;
 
 		                case 3:
-		                    // Perimeter of a Circle
+		                    
 		                    System.out.print("Enter the radius of the circle: ");
 		                    double radius = scanner.nextDouble();
-		                    double circlePerimeter = circlePerimeter(radius);
-		                    System.out.println("Perimeter (circumference) of the circle: " + circlePerimeter);
+		                    System.out.println("Perimeter  of the circle: " + perimeterCircle(radius));
 		                    break;
 
 		                case 4:
-		                    // Exit
-		                    System.out.println("Exiting the program.");
-		                    exit = true;
+		                    
+		                    System.out.println("Exit");
 		                    break;
 
 		                default:
-		                    System.out.println("Invalid choice. Please select again.");
-		                    break;
+		                    System.out.println("Invalid choice. Please try again.");
 		            }
-		        }
-		        scanner.close();
+		        } while (choice!=4);
 		    }
 }
